@@ -7,10 +7,10 @@ Our organization utilized Server Status Squares to check certain devices at glob
 The code allows for monitoring 16 devices per location, but that can be expanded to as much as you want by editing the MAXDB variable in both the statuscheck.py and initdb.py files.
 
 If everything at all sites is up, a message will display at the top indicating everything is ok:
-![Alt text](ok.png?raw=true "Everything is ok")
+![Alt text](ok.PNG?raw=true "Everything is ok")
 
 If there are problems at sites, a warning will display at the top with links that will move the browser to the site's anchor:
-![Alt text](errors.png?raw=true "Problems")
+![Alt text](errors.PNG?raw=true "Problems")
 
 
 ## Shortcomings compared to Server Status Squares
