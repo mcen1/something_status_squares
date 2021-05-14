@@ -25,4 +25,5 @@ If there are problems at sites, a warning will display at the top with links tha
 * Not only ping checks, but also checks via submitting to a web URL and searching for a string in web response to determine device health.
 * Erroring squares 'blink' to assist those who may have issues discerning color.
 
-
+## Why use Oracle Linux?
+CentOS is EOL end of 2021 and, at the time of writing, there doesn't seem to be an official centos-stream container. OEL is free and an RPM distribution which most of my team is familiar with.
