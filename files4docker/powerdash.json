@@ -1,0 +1,35 @@
+{
+  "SITE1, STATE": {
+    "linkurl": "https://cmdb.yourcompany.com/site1",
+    "siteitems": [
+      {"name": "gateway", "url": "10.3.2.1", "method": "ping"},
+      {"name": "ups", "url": "https://someinternalchecker.yourcompany.com/cgi-bin/checkpower?name='SITE1 POWER'", "method": "http", "string": "NOPROBLEMS"},
+      {"name": "host1", "url": "https://someinternalchecker.yourcompany.com/cgi-bin/checkserver?name=sitehost1&type=host", "method": "http", "string": "OK"},
+      {"name": "host2", "url": "https://someinternalchecker.yourcompany.com/cgi-bin/checkserver?name=sitehost2&type=host", "method": "http", "string": "OK"},
+      {"name": "vm1", "url": "https://someinternalchecker.yourcompany.com/cgi-bin/checkserver?name=site1vm1&type=vm", "method": "http", "string": "OK"},
+      {"name": "vm2", "url": "https://someinternalchecker.yourcompany.com/cgi-bin/checkserver?name=site1vm2&type=vm", "method": "http", "string": "OK"}
+    ]
+  },
+  "SITE2, STATE": {
+    "linkurl": "https://cmdb.yourcompany.com/site2",
+    "siteitems": [
+      {"name": "gateway", "url": "10.4.2.1", "method": "ping"},
+      {"name": "ups", "url": "https://someinternalchecker.yourcompany.com/cgi-bin/checkpower?name='SITE2 POWER'", "method": "http", "string": "NOPROBLEMS"},
+      {"name": "host1", "url": "https://someinternalchecker.yourcompany.com/cgi-bin/checkserver?name=site2host1&type=host", "method": "http", "string": "OK"},
+      {"name": "host2", "url": "https://someinternalchecker.yourcompany.com/cgi-bin/checkserver?name=site2host2&type=host", "method": "http", "string": "OK"},
+      {"name": "vm1", "url": "https://someinternalchecker.yourcompany.com/cgi-bin/checkserver?name=site2vm1&type=vm", "method": "http", "string": "OK"},
+      {"name": "vm2", "url": "https://someinternalchecker.yourcompany.com/cgi-bin/checkserver?name=site2vm2&type=vm", "method": "http", "string": "OK"}
+    ]
+  },
+  "SITE3, STATE": {
+    "linkurl": "https://cmdb.yourcompany.com/site3",
+    "siteitems": [
+      {"name": "gateway", "url": "10.5.2.1", "method": "ping"},
+      {"name": "ups", "url": "https://someinternalchecker.yourcompany.com/cgi-bin/checkpower?name='SITE3 POWER'", "method": "http", "string": "NOPROBLEMS"},
+      {"name": "host1", "url": "https://someinternalchecker.yourcompany.com/cgi-bin/checkserver?name=site3host1&type=host", "method": "http", "string": "OK"},
+      {"name": "host2", "url": "https://someinternalchecker.yourcompany.com/cgi-bin/checkserver?name=site3host2&type=host", "method": "http", "string": "OK"},
+      {"name": "vm1", "url": "https://someinternalchecker.yourcompany.com/cgi-bin/checkserver?name=site3vm1&type=vm", "method": "http", "string": "OK"},
+      {"name": "vm2", "url": "https://someinternalchecker.yourcompany.com/cgi-bin/checkserver?name=site3vm2&type=vm", "method": "http", "string": "OK"}
+    ]
+  }
+}

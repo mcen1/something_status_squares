@@ -1,0 +1,50 @@
+#!/bin/env python3
+import sqlite3
+print('Content-type: text/html\n\n')
+conn = sqlite3.connect('database.db')
+cursor = conn.cursor()
+cursor.execute("select * from powerstatus order by sitename")
+junk=cursor.fetchall()
+print("""
+<html>
+<head>
+<title>Power dashboard</title>
+<link href=/bootstrap.min.css rel=stylesheet type=text/css>
+<link href=/main.css rel=stylesheet type=text/css>
+<meta http-equiv="refresh" content="300">
+<center>
+<table>
+""")
+problems=[]
+tosay="<tr>"
+for item in junk:
+  tosay=tosay+"<tr>"
+  for idx,dingus in enumerate(item):
+    if idx==0 or dingus=="none":
+      continue
+    mystatus="unknown"
+    if idx==1:
+      tosay=tosay+"<td id='"+item[0].replace(" ","").replace(",","")+"' colspan=6 class='header'><a target='_blank' href='"+item[1]+"'>"+item[0]+"</a></td>"
+    if idx>=2:
+      if ":" in dingus and 'http' not in dingus:
+        mystatus=dingus.split(":")[1]
+        tosay=tosay+"<td class='lilsquare "+mystatus+"'>"+dingus.split(":")[0].upper()+"<br><p class='updated'>Updated at "+dingus.split(":")[2]+":"+dingus.split(":")[3]+":"+dingus.split(":")[4]+"</p></td>"
+        if mystatus!="ok":
+          if item[0] not in problems:
+            problems.append(item[0])
+      else:
+        if 'https' not in dingus:
+          dingus=dingus.upper()
+        tosay=tosay+"<td class='lilsquare unknown''>"+dingus+"</td>"
+  tosay=tosay+"</tr>"
+
+if len(problems)==0:
+  print("<h1 class='greentime'>The dashboard looks OK</h1><br>")
+else:
+  print("<h1 class='badtime'>There are problems</h1><br> Sites with problems: ")
+  for problem in problems:
+    print("<a class='blue' href='#"+problem.replace(" ","").replace(",","")+"'>"+problem+"</a>&nbsp;")
+print("<br>")
+print(tosay)
+print("</table></center></body>")
+
