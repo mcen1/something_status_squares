@@ -10,7 +10,7 @@ If everything at all sites is up, a message will display at the top indicating e
 ![Alt text](ok.PNG?raw=true "Everything is ok")
 
 If there are problems at sites, a warning will display at the top with links that will move the browser to the site's anchor:
-![Alt text](errors.PNG?raw=true "Problems")
+![Alt text](problems.PNG?raw=true "Problems")
 
 
 ## Shortcomings compared to Server Status Squares
