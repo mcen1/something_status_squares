@@ -1,5 +1,6 @@
 #!/bin/env python3
 import sqlite3
+import json
 print('Content-type: text\n\n')
 conn = sqlite3.connect('database.db')
 cursor = conn.cursor()
@@ -13,4 +14,4 @@ for item in junk:
     if porzingas=='none' or idx<2:
       continue
     myjson[item[0]]['checks'].append(porzingas)
-print(myjson)
+print(json.dumps(myjson))
